@@ -1,0 +1,160 @@
+/* Main utilities */
+
+.container {
+  max-width: var(--max-width); 
+  margin: auto;
+}
+
+.h1-title {
+  position: relative;
+  z-index: 21;
+}
+
+.h1-main { 
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.h1-dark {
+  color: #333;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.h3-dark {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 300;
+  margin:2rem 0 1rem;
+}
+
+.p-main {
+  margin-bottom: 3rem;
+}
+
+.p-dark{
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grids and flexbox */
+.grid-2 {
+  padding:  1rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  position: relative;
+}
+
+.grid-3 {
+  padding:  1rem 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+/* links and buttons */
+.btn {
+  padding: .75rem 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-light {
+  background: #fff;
+  margin: 1rem;
+  border: 1px solid #fff;
+  color: var(--primary-color);
+  transition: background, color, 250ms ease-in;
+}
+
+.btn-light:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+
+
+.btn-primary {
+  border-radius: 5px;
+  border: 1px solid #fff;
+  position: relative;
+  width: 10rem;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary-color);
+  color: #fff;
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 400ms ease-in,
+              opacity 400ms ease-in;
+}
+
+.btn-primary:hover::after {
+  content:'Click Me!';
+  transform: scalex(1);
+  transform-origin: left;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.btn-secondary {
+  border: none;
+  color: #fff;
+  height: 3rem;
+  width: 7rem;
+  background: var(--secondary-color);
+}
+
+.btn-animation::after {
+  content:'We will get back to you!';
+  position: absolute;
+  color: var(--secondary-color);
+  background: #fff;
+  box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.6);
+  width: 13em;
+  height: 2.1em;
+  bottom: 9%;
+  left: 11%;
+  text-align: center;
+  padding:0.5rem;
+  border-radius:5px;
+  transform: scale(0);
+  transition: transform 250ms ease-in,
+              bottom 250ms ease-in,
+              left 250ms ease-in;
+}
+
+.btn-animation:hover::after {
+  bottom: 19%;
+  left: 20.5%;
+  transform: scale(1);
+  }
+
+
